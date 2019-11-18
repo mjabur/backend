@@ -1,9 +1,13 @@
+const model = require('../models/product')
 
-exports.got= function(req, res) {
-     res.send('respond with a resource');
-
+exports.getAll = function(req, res) { 
+    let products = model.getAllProducts()
+    res.statusCode = 200
+    res.json({data: products});
 }
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
 
-});
+exports.getOne = function(req, res) { 
+    let product = model.getOneProduct(req.params.productId)
+    res.statusCode = 200
+    res.json({data: product});
+}
