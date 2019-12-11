@@ -1,10 +1,10 @@
-const User = require('../models/user')
+const Course = require('../models/course')
 const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports.getAll = async function(req, res) {
     try {
-      let users = await Product.find()
-      res.json({data: users})
+      let courses = await Course.find()
+      res.json({data: courses})
     } catch (error) {
       res.json({error: error})
     }
@@ -12,8 +12,8 @@ module.exports.getAll = async function(req, res) {
 
 module.exports.getOne = async function(req, res) {
   try {
-    let user = await User.findOne()
-    res.json({data: user})
+    let course = await Course.findOne()
+    res.json({data: course})
   } catch (error) {
     res.end({error: error})
   }
@@ -21,10 +21,10 @@ module.exports.getOne = async function(req, res) {
 
 module.exports.create = async function(req, res) {
         try {
-  let user = new Product(req.body)
-  let newUser = await user.save()
+  let course = new Course(req.body)
+  let newCourse = await course.save()
   res.statusCode = 201
-  res.json({data: {id: newUser._id, message: "Created ok"}})
+  res.json({data: {id: newCourse._id, message: "Created ok"}})
       } catch (error) {
         console.log(error)
         res.end({error: error})

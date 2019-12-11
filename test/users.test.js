@@ -8,9 +8,9 @@ describe('Getting users', () => {
             .get('/api/users')
         expect(res.statusCode).equals(200)
         expect(res.body).to.have.property('data')
-            .to.deep.include({id: 1, name: "Sarah"}) 
+            .to.deep.include({id: 1, name: "Jack"}) 
         expect(res.body).to.have.property('data')
-            .to.deep.include({id: 2, name: "David"}) 
+            .to.deep.include({id: 2, name: "Sam"}) 
     })
     it('should return the name and id of a certain user', async () => {
         const res = await request(app)
