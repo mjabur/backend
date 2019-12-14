@@ -7,5 +7,4 @@ router.get('/:userId/products/', controller.getAll)
 router.get('/:userId/productId/products', controller.getOne)
 router.post ('/:userId/products/', controller.create)
 
-
 module.exports = router;

@@ -12,5 +12,6 @@ describe('Welcome page', () => {
     const res = await request(app) .get('/welcome/2');
     expect(res.statusCode).equals(200);
     expect(res.body).to.have.property('message', 'Bye');
+    
   });
 });

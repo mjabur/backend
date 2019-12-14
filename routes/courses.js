@@ -8,5 +8,6 @@ exports.getProducts = async function() {
     let result = await db.collection('courses').
             find().toArray()
     client.close();
+    
     return result
 }

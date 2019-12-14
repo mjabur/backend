@@ -17,7 +17,7 @@ let product1 = {
 }
 let product2 = {
   _id: '5ddcfa734e54c7107015f35b6',
-  name: "Tinnes",
+  name: "Tennis",
   user: user
 }
 
@@ -72,6 +72,7 @@ describe('Products', () => {
           expect(res.body).to.have.nested.property('data.name', 'Printer')
       })
   })
+  
 })
 exports.init = async function() {
     try {

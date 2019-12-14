@@ -2,6 +2,7 @@ let request = require('supertest')
 let app = require('../app')
 let expect = require('chai').expect
 
+
 describe('Getting courses', () => {
     it('should return the name and ids of all courses', async () => {
         const res = await request(app)
@@ -15,6 +16,6 @@ describe('Getting courses', () => {
             .to.deep.include({id: "BA3010", name: "Corporate Finance"}) 
         expect(res.body).to.have.property('data')
             .to.deep.include({id: "CS1020", name: "Environmental Science"}) 
-                
+            
     })
 })

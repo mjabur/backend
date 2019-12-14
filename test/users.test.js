@@ -19,6 +19,7 @@ describe('Getting users', () => {
         expect(res.body).to.have.property('data').to.deep.equal({id: 1, name: "Sarah"}) 
     })
 })
+
 exports.init = async function() {
     try {
         await mongoose.connect(env.db, {useNewUrlParser: true, useUnifiedTopology: true});
