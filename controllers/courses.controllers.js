@@ -9,7 +9,19 @@ module.exports.getAll = async function(req, res) {
       res.json({error: error})
     }
 }
-
+module.exports.getProducts = async function() {
+    var MongoClient = require('mongodb').MongoClient
+    let client = await MongoClient.connect(
+        'mongodb://0.0.0.0:27017',
+        {useUnifiedTopology:true}
+        )
+    let db = client.db('cs3051')
+    let result = await db.collection('courses').
+            find().toArray()
+    client.close();
+    
+    return result
+}
 module.exports.getOne = async function(req, res) {
   try {
     let course = await Course.findOne()

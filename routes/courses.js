@@ -1,13 +1,11 @@
-exports.getProducts = async function() {
-    var MongoClient = require('mongodb').MongoClient
-    let client = await MongoClient.connect(
-        'mongodb://0.0.0.0:27017',
-        {useUnifiedTopology:true}
-        )
-    let db = client.db('cs3051')
-    let result = await db.collection('courses').
-            find().toArray()
-    client.close();
-    
-    return result
-}
+var express = require('express');
+var router = express.Router();
+
+const controller = require('../controllers/courses.controllers')
+
+/* GET users listing. */
+router.get('/', controller.getAll)
+router.get('/:courseId/courses', controller.getOne)
+router.post ('/', controller.create)
+
+module.exports = router;
